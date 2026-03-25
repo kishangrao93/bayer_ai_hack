@@ -1,0 +1,36 @@
+# Bayer AI Incident Response System — Lambda dependencies
+#
+# Pin ranges keep the Lambda package reproducible while allowing compatible
+# patch updates. The sentence-transformers / rank_bm25 packages are kept for
+# any local experimentation but are NOT needed at Lambda runtime — exclude
+# them from the deployment package if size is a constraint (Lambda limit: 250 MB).
+
+# AWS SDK
+boto3>=1.34,<2.0
+botocore>=1.34,<2.0
+
+# LangChain core + integrations
+langchain>=0.3.0,<0.4
+langchain-core>=0.3.0,<0.4
+langchain-openai>=0.2.0,<0.3
+langchain-aws>=0.2.0,<0.3        # kept for Bedrock KB retrieval (boto3 wrapper)
+langchain-community>=0.3.0,<0.4
+
+# OpenAI SDK (required by langchain-openai)
+openai>=1.40.0,<2.0
+
+# LangGraph (StateGraph orchestration)
+langgraph>=0.2.0,<0.3
+
+# LangSmith tracing (optional but imported)
+langsmith>=0.1.0,<0.3
+
+# Typing backport (Python 3.9 Lambda runtime)
+typing-extensions>=4.9,<5.0
+
+# Numeric
+numpy>=1.26,<2.0
+
+# Local/experimental — exclude from slim Lambda package if needed
+rank_bm25>=0.2.2,<0.3
+sentence-transformers>=2.7.0,<3.0

@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:123456789012:CloudWatchAlarms:example-subscription",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "abc12345-1234-1234-1234-abcdef012345",
+        "TopicArn": "arn:aws:sns:us-east-1:123456789012:CloudWatchAlarms",
+        "Subject": "ALARM: \"HighErrorRate-MyLambdaFunction\" in US East (N. Virginia)",
+        "Message": "{\"AlarmName\":\"HighErrorRate-MyLambdaFunction\",\"AlarmDescription\":\"Lambda error rate exceeded 5% over a 5-minute window.\",\"AWSAccountId\":\"123456789012\",\"NewStateValue\":\"ALARM\",\"NewStateReason\":\"Threshold Crossed: 1 datapoint [6.25 (01/03/24 10:00:00)] was greater than the threshold (5.0).\",\"StateChangeTime\":\"2024-03-01T10:00:00.000+0000\",\"Region\":\"US East (N. Virginia)\",\"AlarmArn\":\"arn:aws:cloudwatch:us-east-1:123456789012:alarm:HighErrorRate-MyLambdaFunction\",\"OldStateValue\":\"OK\",\"Trigger\":{\"MetricName\":\"Errors\",\"Namespace\":\"AWS/Lambda\",\"StatisticType\":\"Statistic\",\"Statistic\":\"SUM\",\"Unit\":null,\"Dimensions\":[{\"name\":\"FunctionName\",\"value\":\"MyLambdaFunction\"}],\"Period\":300,\"EvaluationPeriods\":1,\"ComparisonOperator\":\"GreaterThanThreshold\",\"Threshold\":5.0,\"TreatMissingData\":\"- TreatMissingData: missing\",\"EvaluateLowSampleCountPercentile\":\"\"}}",
+        "Timestamp": "2024-03-01T10:00:05.123Z",
+        "SignatureVersion": "1",
+        "Signature": "EXAMPLE_SIGNATURE",
+        "SigningCertUrl": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-example.pem",
+        "UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=example",
+        "MessageAttributes": {}
+      }
+    }
+  ]
+}
